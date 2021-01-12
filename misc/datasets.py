@@ -74,8 +74,9 @@ class Dataset(object):
             for i in range(images.shape[0]):
                 h1 = np.floor((ori_size - self._imsize) * np.random.random())
                 w1 = np.floor((ori_size - self._imsize) * np.random.random())
-                cropped_image =\
-                    images[i][w1: w1 + self._imsize, h1: h1 + self._imsize, :]
+                h1 = int(h1)
+                w1 = int(w1)
+                cropped_image = images[i][w1: w1 + self._imsize, h1: h1 + self._imsize, :]
                 if random.random() > 0.5:
                     transformed_images[i] = np.fliplr(cropped_image)
                 else:
@@ -226,15 +227,15 @@ class TextDataset(object):
             print('images: ', images.shape)
 
         with open(pickle_path + self.embedding_filename, 'rb') as f:
-            embeddings = pickle.load(f)
+            embeddings = pickle.load(f, encoding='latin1')
             embeddings = np.array(embeddings)
             self.embedding_shape = [embeddings.shape[-1]]
             print('embeddings: ', embeddings.shape)
         with open(pickle_path + '/filenames.pickle', 'rb') as f:
-            list_filenames = pickle.load(f)
+            list_filenames = pickle.load(f, encoding='latin1')
             print('list_filenames: ', len(list_filenames), list_filenames[0])
         with open(pickle_path + '/class_info.pickle', 'rb') as f:
-            class_id = pickle.load(f)
+            class_id = pickle.load(f, encoding='latin1')
 
         return Dataset(images, self.image_shape[0], embeddings,
                        list_filenames, self.workdir, None,

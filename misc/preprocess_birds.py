@@ -3,6 +3,9 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import sys
+sys.path.append('.')
+
 # import tensorflow as tf
 import numpy as np
 import os
@@ -40,10 +43,45 @@ def load_bbox(data_dir):
     df_filenames = pd.read_csv(filepath, delim_whitespace=True, header=None)
     filenames = df_filenames[1].tolist()
     print('Total filenames: ', len(filenames), filenames[0])
+
+    split_meta_file = os.path.join(data_dir, 'CUB_200_2011/train_test_split.txt')
+
+    with open(split_meta_file, mode="r") as f:
+        train_file_list = list()
+        test_file_list = list()
+        i = 0
+        while True:
+            line = f.readline().strip('\n')
+            if line:
+                file_no, flag = line.split(' ')
+                if(flag == '0'):
+                    #train_file_list.append(file_no)
+                    key = filenames[i][:-4]
+                    train_file_list.append(key)
+                else:
+                    test_file_list.append(key)
+            else:
+                break
+            i = i+1
+    print('Total : ', i, len(train_file_list), len(test_file_list))
+
+    # generate filenames.pickle 
+    outfile = os.path.join(data_dir, 'train/filenames.pickle')
+    with open(outfile, 'wb') as f_out:
+        pickle.dump(train_file_list, f_out)
+        print('save to: ', outfile)
+    #
+    outfile = os.path.join(data_dir, 'test/filenames.pickle')
+    with open(outfile, 'wb') as f_out:
+        pickle.dump(test_file_list, f_out)
+        print('save to: ', outfile)
+
+
     #
     filename_bbox = {img_file[:-4]: [] for img_file in filenames}
     numImgs = len(filenames)
-    for i in xrange(0, numImgs):
+    #for i in xrange(0, numImgs):
+    for i in range(0, numImgs):
         # bbox = [x-left, y-top, width, height]
         bbox = df_bounding_boxes.iloc[i][1:].tolist()
 
