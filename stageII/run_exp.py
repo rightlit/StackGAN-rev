@@ -1,6 +1,9 @@
 from __future__ import division
 from __future__ import print_function
 
+import sys
+sys.path.append('.')
+
 import tensorflow as tf
 import dateutil
 import dateutil.tz
