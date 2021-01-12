@@ -62,7 +62,8 @@ def build_model(sess, embedding_dim, batch_size):
         with tf.variable_scope("g_net"):
             c = sample_encoded_context(embeddings, model)
             z = tf.random_normal([batch_size, cfg.Z_DIM])
-            fake_images = model.get_generator(tf.concat(1, [c, z]))
+            #fake_images = model.get_generator(tf.concat(1, [c, z]))
+            fake_images = model.get_generator(tf.concat([c, z], 1))
         with tf.variable_scope("hr_g_net"):
             hr_c = sample_encoded_context(embeddings, model)
             hr_fake_images = model.hr_get_generator(fake_images, hr_c)
@@ -80,7 +81,8 @@ def build_model(sess, embedding_dim, batch_size):
 def drawCaption(img, caption):
     img_txt = Image.fromarray(img)
     # get a font
-    fnt = ImageFont.truetype('Pillow/Tests/fonts/FreeMono.ttf', 50)
+    #fnt = ImageFont.truetype('Pillow/Tests/fonts/FreeMono.ttf', 50)
+    fnt = ImageFont.truetype('demo/FreeMono.ttf', 50)
     # get a drawing context
     d = ImageDraw.Draw(img_txt)
 
@@ -91,7 +93,8 @@ def drawCaption(img, caption):
         d.text((10, 832), 'Stage-I', font=fnt, fill=(255, 255, 255, 255))
         d.text((10, 1088), 'Stage-II', font=fnt, fill=(255, 255, 255, 255))
 
-    idx = caption.find(' ', 60)
+    #idx = caption.find(' ', 60)
+    idx = caption.find(b' ', 60)
     if idx == -1:
         d.text((256, 10), caption, font=fnt, fill=(255, 255, 255, 255))
     else:
@@ -113,7 +116,8 @@ def save_super_images(sample_batchs, hr_sample_batchs,
     # Save up to 16 samples for each text embedding/sentence
     img_shape = hr_sample_batchs[0][0].shape
     for j in range(batch_size):
-        if not re.search('[a-zA-Z]+', captions_batch[j]):
+        #if not re.search('[a-zA-Z]+', captions_batch[j]):
+        if not re.search(b'[a-zA-Z]+', captions_batch[j]):
             continue
 
         padding = np.zeros(img_shape)
