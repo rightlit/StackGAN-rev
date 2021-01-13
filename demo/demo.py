@@ -96,12 +96,12 @@ def drawCaption(img, caption):
     #idx = caption.find(' ', 60)
     idx = caption.find(b' ', 60)
     if idx == -1:
-        d.text((256, 10), caption, font=fnt, fill=(255, 255, 255, 255))
+        d.text((256, 10), str(caption), font=fnt, fill=(255, 255, 255, 255))
     else:
         cap1 = caption[:idx]
         cap2 = caption[idx+1:]
-        d.text((256, 10), cap1, font=fnt, fill=(255, 255, 255, 255))
-        d.text((256, 60), cap2, font=fnt, fill=(255, 255, 255, 255))
+        d.text((256, 10), str(cap1), font=fnt, fill=(255, 255, 255, 255))
+        d.text((256, 60), str(cap2), font=fnt, fill=(255, 255, 255, 255))
 
     return img_txt
 
@@ -224,5 +224,6 @@ if __name__ == "__main__":
 
         print('Finish generating samples for %d sentences:' % num_embeddings)
         print('Example sentences:')
-        for i in xrange(np.minimum(10, num_embeddings)):
+        #for i in xrange(np.minimum(10, num_embeddings)):
+        for i in range(np.minimum(10, num_embeddings)):
             print('Sentence %d: %s' % (i, captions_list[i]))
