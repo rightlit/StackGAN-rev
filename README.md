@@ -12,7 +12,7 @@ TensorFlow == 1.8 (prettytensor supported)
 
 pytorch == 1.2
 
-Torch7 (http://torch.ch/docs/getting-started.html#_) is needed, if use the pre-trained char-CNN-RNN text encoder.
+Torch7 (http://torch.ch/docs/getting-started.html#_)
 
 In addition, please add the project folder to PYTHONPATH and `pip install` the following packages:
 - `prettytensor==0.7.4`
