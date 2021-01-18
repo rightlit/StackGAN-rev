@@ -38,6 +38,18 @@ In addition, please add the project folder to PYTHONPATH and `pip install` the f
 - Run `sh demo/birds_demo.sh` to generate bird samples from sentences. The results will be saved to `Data/birds/example_captions/`.(Need to [download](https://drive.google.com/file/d/0B0ywwgffWnLLU0F3UHA3NzFTNEE/view) the char-CNN-RNN text encoder for birds to `models/text_encoder/`. Note: this text encoder is provided by [reedscot/icml2016](https://github.com/reedscot/icml2016)).
 - Run `python demo/birds_skip_thought_demo.py --cfg demo/cfg/birds-skip-thought-demo.yml --gpu 2` to generate bird samples from sentences. The results will be saved to `Data/birds/example_captions-skip-thought/`. (Need to [download](https://github.com/ryankiros/skip-thoughts) vocabulary for skip-thought vectors to `Data/skipthoughts/`).
 
+Examples for birds (char-CNN-RNN embeddings), more on [youtube](https://youtu.be/93yaf_kE0Fg):
+![](examples/bird1.jpg)
+![](examples/bird2.jpg)
+![](examples/bird4.jpg)
+![](examples/bird3.jpg)
+
+
+Examples for flowers (char-CNN-RNN embeddings), more on [youtube](https://youtu.be/SuRyL5vhCIM):
+![](examples/flower1.jpg)
+![](examples/flower2.jpg)
+![](examples/flower3.jpg)
+![](examples/flower4.jpg)
 
 **References**
 
