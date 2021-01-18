@@ -6,19 +6,22 @@ Tensorflow implementation for reproducing main results in the paper [StackGAN: T
 
 
 ### Dependencies
-python 3.6
+python == 3.6
 
-[TensorFlow 1.8]
-
-[Optional] [Torch](http://torch.ch/docs/getting-started.html#_) is needed, if use the pre-trained char-CNN-RNN text encoder.
+TensorFlow == 1.8 (prettytensor supported)
+pytorch == 1.2
+Torch7 (http://torch.ch/docs/getting-started.html#_) is needed, if use the pre-trained char-CNN-RNN text encoder.
 
 In addition, please add the project folder to PYTHONPATH and `pip install` the following packages:
-- `prettytensor`
+- `prettytensor==0.7.4`
 - `progressbar`
 - `python-dateutil`
 - `easydict`
 - `pandas`
 - `torchfile`
+- `scipy==1.1.0`
+- `torchvision==0.4.0`
+
 
 
 **Data**
