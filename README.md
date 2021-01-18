@@ -46,10 +46,10 @@ Examples for birds (char-CNN-RNN embeddings), more on [youtube](https://youtu.be
 
 
 Examples for flowers (char-CNN-RNN embeddings), more on [youtube](https://youtu.be/SuRyL5vhCIM):
-![](examples/flower1.jpg)
-![](examples/flower2.jpg)
-![](examples/flower3.jpg)
-![](examples/flower4.jpg)
+![](Data/flowers/example_captions/sentence0.jpg)
+![](Data/flowers/example_captions/sentence1.jpg)
+![](Data/flowers/example_captions/sentence2.jpg)
+![](Data/flowers/example_captions/sentence3.jpg)
 
 **References**
 
