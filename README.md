@@ -39,10 +39,10 @@ In addition, please add the project folder to PYTHONPATH and `pip install` the f
 - Run `python demo/birds_skip_thought_demo.py --cfg demo/cfg/birds-skip-thought-demo.yml --gpu 2` to generate bird samples from sentences. The results will be saved to `Data/birds/example_captions-skip-thought/`. (Need to [download](https://github.com/ryankiros/skip-thoughts) vocabulary for skip-thought vectors to `Data/skipthoughts/`).
 
 Examples for birds (char-CNN-RNN embeddings), more on [youtube](https://youtu.be/93yaf_kE0Fg):
-![](examples/bird1.jpg)
-![](examples/bird2.jpg)
-![](examples/bird4.jpg)
-![](examples/bird3.jpg)
+![](Data/birds/example_captions/sentence0.jpg)
+![](Data/birds/example_captions/sentence1.jpg)
+![](Data/birds/example_captions/sentence2.jpg)
+![](Data/birds/example_captions/sentence3.jpg)
 
 
 Examples for flowers (char-CNN-RNN embeddings), more on [youtube](https://youtu.be/SuRyL5vhCIM):
