@@ -1,4 +1,4 @@
-# StackGAN-rev
+# StackGAN-revision for Colab
 
 Tensorflow implementation for reproducing main results in the paper [StackGAN: Text to Photo-realistic Image Synthesis with Stacked Generative Adversarial Networks](https://arxiv.org/pdf/1612.03242v1.pdf) by Han Zhang, Tao Xu, Hongsheng Li, Shaoting Zhang, Xiaogang Wang,   Xiaolei Huang, Dimitris Metaxas.
 
@@ -16,11 +16,8 @@ Torch7 (http://torch.ch/docs/getting-started.html#_) is needed, if use the pre-t
 
 In addition, please add the project folder to PYTHONPATH and `pip install` the following packages:
 - `prettytensor==0.7.4`
-- `progressbar`
-- `python-dateutil`
-- `easydict`
-- `pandas`
 - `torchfile`
+- `lupa`
 - `scipy==1.1.0`
 - `torchvision==0.4.0`
 
