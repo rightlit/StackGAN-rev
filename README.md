@@ -44,7 +44,6 @@ Examples for birds (char-CNN-RNN embeddings), more on [youtube](https://youtu.be
 ![](Data/birds/example_captions/sentence2.jpg)
 ![](Data/birds/example_captions/sentence3.jpg)
 
-
 Examples for flowers (char-CNN-RNN embeddings), more on [youtube](https://youtu.be/SuRyL5vhCIM):
 ![](Data/flowers/example_captions/sentence0.jpg)
 ![](Data/flowers/example_captions/sentence1.jpg)
