@@ -55,6 +55,11 @@ Examples for flowers (char-CNN-RNN embeddings), more on [youtube](https://youtu.
 ![](Data/flowers/example_captions/sentence1.jpg)
 ![](Data/flowers/example_captions/sentence2.jpg)
 ![](Data/flowers/example_captions/sentence3.jpg)
+![](Data/flowers/example_captions/sentence4.jpg)
+![](Data/flowers/example_captions/sentence5.jpg)
+![](Data/flowers/example_captions/sentence6.jpg)
+![](Data/flowers/example_captions/sentence7.jpg)
+![](Data/flowers/example_captions/sentence8.jpg)
 
 **References**
 
