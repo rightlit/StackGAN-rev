@@ -1,0 +1,57 @@
+https://github.com/hanzhanggit/StackGAN/issues/30
+=================
+
+tf.get_collection_ref(variable_scope._VARSCOPE_KEY) --> tf.get_collection_ref(variable_scope._VARSCOPESTORE_KEY)
+
+ File "/usr/local/lib/python3.6/dist-packages/prettytensor/scopes.py", line 55, in var_and_name_scope
+    vs_key = tf.get_collection_ref(variable_scope._VARSCOPE_KEY)
+AttributeError: module 'tensorflow.python.ops.variable_scope' has no attribute '_VARSCOPE_KEY'
+
+==> Put tensorflow<1.8 in requirements.txt
+From a tutorial perspective it works but it is not compatible to future versions of tensorflow
+
+ File "/tensorflow-1.15.2/python3.6/tensorflow_core/python/util/module_wrapper.py", line 193, in __getattr__
+    attr = getattr(self._tfmw_wrapped_module, name)
+AttributeError: module 'tensorflow' has no attribute 'complex_abs'
+
+==>
+
+File "./stageI/trainer.py", line 101, in init_opt
+    fake_images = self.model.get_generator(tf.concat(1, [c, z]))
+  TypeError: Expected int32, got <prettytensor.pretty_tensor_class.Layer object at 0x7f74d41abd90> of type 'Layer' instead
+
+==> In TensorFlow r0.12, the function is like
+tf.concat(axis, value)
+while in TensorFlow r1.x version the argument order has been changed:
+tf.concat(value, axis)
+
+
+  File "./stageI/trainer.py", line 142, in compute_losses
+    tf.ones_like(real_logit))
+  File "/usr/local/lib/python3.6/dist-packages/tensorflow/python/ops/nn_impl.py", line 146, in sigmoid_cross_entropy_with_logits
+    _sentinel, labels, logits)
+    File "/usr/local/lib/python3.6/dist-packages/tensorflow/python/ops/nn_ops.py", line 1533, in _ensure_xent_args
+    "named arguments (labels=..., logits=..., ...)" % name)
+  ValueError: Only call `sigmoid_cross_entropy_with_logits` with named arguments (labels=..., logits=..., ...)
+
+==> 
+tf.nn.sigmoid_cross_entropy_with_logits(self.D_logits_, tf.ones_like(self.D_))
+...with the following:
+
+tf.nn.sigmoid_cross_entropy_with_logits(logits=self.D_logits_, labels=tf.ones_like(self.D_))
+
+  File "/usr/local/lib/python3.6/dist-packages/prettytensor/pretty_tensor_class.py", line 1140, in _replace_deferred
+    return arg._construct(context)
+  File "/usr/local/lib/python3.6/dist-packages/prettytensor/pretty_tensor_class.py", line 1176, in _construct
+    _strip_unnecessary_contents_from_stack(result, set())
+  File "/usr/local/lib/python3.6/dist-packages/prettytensor/pretty_tensor_class.py", line 1335, in _strip_unnecessary_contents_from_stack
+    for f, line_no, method, _ in result._traceback:
+ ==> 
+Change
+for f, line_no, method, _ in result._traceback:
+to
+for f, line_no, method, *_ in result._traceback:
+*_ takes any number of arguments and resolve whatever left in the unpacked tuple
+
+
+ 
