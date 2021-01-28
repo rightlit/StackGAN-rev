@@ -10,7 +10,7 @@ Refer to troubleshooting [issues](https://github.com/rightlit/StackGAN-rev/issue
 ### Dependencies
 python == 3.6
 
-TensorFlow == 1.7 (prettytensor still supported)
+TensorFlow == 1.7 (prettytensor supported)
 
 pytorch == 1.2
 
