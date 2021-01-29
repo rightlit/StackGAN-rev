@@ -2,7 +2,8 @@
 
 This is StackGAN revised version for Google Colab.
 
-Refer to [https://github.com/hanzhanggit/StackGAN](https://github.com/hanzhanggit/StackGAN) for original source version.<br>
+Refer to [https://github.com/hanzhanggit/StackGAN](https://github.com/hanzhanggit/StackGAN) for original source version.
+
 This is implementation for the paper [StackGAN: Text to Photo-realistic Image Synthesis with Stacked Generative Adversarial Networks](https://arxiv.org/pdf/1612.03242v1.pdf).
 
 Refer to troubleshooting [issues](https://github.com/rightlit/StackGAN-rev/issues) while running with original source 
