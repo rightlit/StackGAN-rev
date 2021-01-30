@@ -35,7 +35,7 @@ In addition, please add the project folder to PYTHONPATH and `pip install` the f
 - Run `sh demo/birds_demo.sh` to generate bird samples from sentences. The results will be saved to `Data/birds/example_captions/`.
 
 
-Examples for birds (char-CNN-RNN embeddings):
+**Examples for birds (char-CNN-RNN embeddings):**
 ![](Data/birds/example_captions/sentence0.jpg)
 ![](Data/birds/example_captions/sentence1.jpg)
 ![](Data/birds/example_captions/sentence2.jpg)
@@ -47,7 +47,7 @@ Examples for birds (char-CNN-RNN embeddings):
 ![](Data/birds/example_captions/sentence8.jpg)
 
 
-Examples for flowers (char-CNN-RNN embeddings):
+**Examples for flowers (char-CNN-RNN embeddings):**
 ![](Data/flowers/example_captions/sentence0.jpg)
 ![](Data/flowers/example_captions/sentence1.jpg)
 ![](Data/flowers/example_captions/sentence2.jpg)
