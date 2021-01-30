@@ -26,11 +26,11 @@ In addition, please add the project folder to PYTHONPATH and `pip install` the f
 
 
 **Run Demos**
-- Run `sh demo/flowers_demo.sh` to generate flower samples from sentences. The results will be saved to `Data/flowers/example_captions/`. (Need to [download](https://drive.google.com/file/d/0B0ywwgffWnLLZUt0UmQ1LU1oWlU/view) the char-CNN-RNN text encoder for flowers to `models/text_encoder/`. Note: this text encoder is provided by [reedscot/icml2016](https://github.com/reedscot/icml2016)).
-- Run `sh demo/birds_demo.sh` to generate bird samples from sentences. The results will be saved to `Data/birds/example_captions/`.(Need to [download](https://drive.google.com/file/d/0B0ywwgffWnLLU0F3UHA3NzFTNEE/view) the char-CNN-RNN text encoder for birds to `models/text_encoder/`. Note: this text encoder is provided by [reedscot/icml2016](https://github.com/reedscot/icml2016)).
-- Run `python demo/birds_skip_thought_demo.py --cfg demo/cfg/birds-skip-thought-demo.yml --gpu 2` to generate bird samples from sentences. The results will be saved to `Data/birds/example_captions-skip-thought/`. (Need to [download](https://github.com/ryankiros/skip-thoughts) vocabulary for skip-thought vectors to `Data/skipthoughts/`).
+- Run `sh demo/flowers_demo.sh` to generate flower samples from sentences. The results will be saved to `Data/flowers/example_captions/`. 
+- Run `sh demo/birds_demo.sh` to generate bird samples from sentences. The results will be saved to `Data/birds/example_captions/`.
 
-Examples for birds (char-CNN-RNN embeddings), more on [youtube](https://youtu.be/93yaf_kE0Fg):
+
+Examples for birds (char-CNN-RNN embeddings):
 ![](Data/birds/example_captions/sentence0.jpg)
 ![](Data/birds/example_captions/sentence1.jpg)
 ![](Data/birds/example_captions/sentence2.jpg)
@@ -42,7 +42,7 @@ Examples for birds (char-CNN-RNN embeddings), more on [youtube](https://youtu.be
 ![](Data/birds/example_captions/sentence8.jpg)
 
 
-Examples for flowers (char-CNN-RNN embeddings), more on [youtube](https://youtu.be/SuRyL5vhCIM):
+Examples for flowers (char-CNN-RNN embeddings):
 ![](Data/flowers/example_captions/sentence0.jpg)
 ![](Data/flowers/example_captions/sentence1.jpg)
 ![](Data/flowers/example_captions/sentence2.jpg)
