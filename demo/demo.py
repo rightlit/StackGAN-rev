@@ -127,6 +127,12 @@ def save_super_images(sample_batchs, hr_sample_batchs,
         for i in range(np.minimum(8, len(sample_batchs))):
             lr_img = sample_batchs[i][j]
             hr_img = hr_sample_batchs[i][j]
+            # add code
+            fullpath = '%s/lr_img_%d_%d.jpg' % (save_dir, startID + j, i)
+            scipy.misc.imsave(fullpath, lr_img)
+            fullpath = '%s/hr_img_%d_%d.jpg' % (save_dir, startID + j, i)
+            scipy.misc.imsave(fullpath, hr_img)
+
             hr_img = (hr_img + 1.0) * 127.5
             re_sample = scipy.misc.imresize(lr_img, hr_img.shape[:2])
             row1.append(re_sample)
