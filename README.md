@@ -1,4 +1,4 @@
-# StackGAN-revision for Colab
+# StackGAN-revision and demos
 
 This is StackGAN revised version for Google Colab.
 
